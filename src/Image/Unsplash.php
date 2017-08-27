@@ -2,7 +2,7 @@
 /**
  * @author         Pierre-Henry Soria <hi@ph7.me>
  * @copyright      (c) 2017, Pierre-Henry Soria. All Rights Reserved.
- * @license        GNU General Public License; <https://www.gnu.org/licenses/gpl-3.0.en.html>
+ * @license        MIT License <http://www.opensource.org/licenses/mit-license.php>
  */
 
 declare(strict_types = 1);
