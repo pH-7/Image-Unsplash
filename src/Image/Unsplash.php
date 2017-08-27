@@ -11,13 +11,13 @@ namespace PH7\Image;
 
 class Unsplash
 {
-    const API_URL = 'https://images.unsplash.com/';
+    public const DEFAULT_WIDTH = 600;
+    public const DEFAULT_HEIGHT = 400;
+    public const DEFAULT_QUALITY = 80;
+    public const CROP_FIT = 'crop';
+    public const MAX_FIT = 'max';
 
-    const DEFAULT_WIDTH = 600;
-    const DEFAULT_HEIGHT = 400;
-    const DEFAULT_QUALITY = 80;
-    const CROP_FIT = 'crop';
-    const MAX_FIT = 'max';
+    protected const API_URL = 'https://images.unsplash.com/';
 
     private const FIT_FORMATS = [
         self::CROP_FIT,
