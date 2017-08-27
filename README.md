@@ -8,11 +8,18 @@ It's a really lightweight and simple PHP class that helps you to get easily any 
 ## Example
 
 ```php
+    use PH7\Image\Unsplash;
+
     $unsplash = new Unsplash();
     $unsplash->setWidth(600)
         ->setHeight(400)
         ->setQuality(80)
         ->setImageId('photo-1462045504115-6c1d931f07d1');
+
+    echo '<img src="' . $unsplash->getImage() . '">';
+
+    $unsplash->setImageId('photo-1500045992661-f978470eaf7b');
+    $unsplash->fit(Unsplash::MAX_FIT);
 
     echo '<img src="' . $unsplash->getImage() . '">';
 ```
