@@ -5,8 +5,6 @@
  * @license        MIT License <http://www.opensource.org/licenses/mit-license.php>
  */
 
-declare(strict_types = 1);
-
 namespace PH7\Image;
 
 use InvalidArgumentException;
