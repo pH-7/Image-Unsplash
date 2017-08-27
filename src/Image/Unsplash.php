@@ -16,6 +16,13 @@ class Unsplash
     const DEFAULT_WIDTH = 600;
     const DEFAULT_HEIGHT = 400;
     const DEFAULT_QUALITY = 80;
+    const CROP_FIT = 'crop';
+    const MAX_FIT = 'max';
+
+    private const FIT_FORMATS = [
+        self::CROP_FIT,
+        self::MAX_FIT
+    ];
 
     /** @var string */
     private $imageId;
@@ -25,6 +32,9 @@ class Unsplash
 
     /** @var int */
     private $height = self::DEFAULT_HEIGHT;
+
+    /** @var string */
+    private $fit = self::CROP_FIT;
 
     /** @var int */
     private $quality = self::DEFAULT_QUALITY;
@@ -39,6 +49,24 @@ class Unsplash
     public function setHeight(int $height): Unsplash
     {
         $this->height = $height;
+
+        return $this;
+    }
+
+    /**
+     * @param string $fit
+     *
+     * @return Unsplash
+     *
+     * @throws InvalidFitException
+     */
+    public function setFit(string $fit): Unsplash
+    {
+        if (!in_array($fit, self::FIT_FORMATS)) {
+            throw new InvalidFitException('Fit must be "crop" or "max".');
+        }
+
+        $this->fit = $fit;
 
         return $this;
     }
@@ -64,7 +92,7 @@ class Unsplash
         $options = [
             'dpr' => 2,
             'auto' => 'format',
-            'fit' => 'crop',
+            'fit' => $this->fit,
             'w' => $this->width,
             'h' => $this->height,
             'q' => $this->quality

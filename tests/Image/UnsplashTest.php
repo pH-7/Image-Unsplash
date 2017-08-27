@@ -20,9 +20,10 @@ class UnsplashTest extends TestCase
         $unsplash->setWidth(750)
             ->setHeight(450)
             ->setQuality(90)
+            ->setFit('max')
             ->setImageId('photo-1462045504115-6c1d931f07d1');
 
-        $expectedUrl = 'https://images.unsplash.com/photo-1462045504115-6c1d931f07d1?dpr=2&amp;auto=format&amp;fit=crop&amp;w=750&amp;h=450&amp;q=90';
+        $expectedUrl = 'https://images.unsplash.com/photo-1462045504115-6c1d931f07d1?dpr=2&amp;auto=format&amp;fit=max&amp;w=750&amp;h=450&amp;q=90';
         $this->assertSame($expectedUrl, $unsplash->getImage());
     }
 
@@ -33,5 +34,14 @@ class UnsplashTest extends TestCase
 
         $expectedUrl = 'https://images.unsplash.com/photo-1462045504115-6c1d931f07d1?dpr=2&amp;auto=format&amp;fit=crop&amp;w=600&amp;h=400&amp;q=80';
         $this->assertSame($expectedUrl, $unsplash->getImage());
+    }
+
+    /**
+     * @expectedException \PH7\Image\InvalidFitException
+     */
+    public function testGetImageWithInvalidFit(): void
+    {
+        $unsplash = new Unsplash();
+        $unsplash->setFit('I am invalid arg');
     }
 }
