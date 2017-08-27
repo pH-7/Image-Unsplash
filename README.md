@@ -2,7 +2,7 @@
 
 Get easily any Unsplash images with a clean PHP class.
 
-It's a really lightweight class that helps to get easily any images from Unsplash.com while keeping your project clean.
+It's a really lightweight and simple PHP class that helps you to get easily any images from Unsplash.com while keeping your project clean.
 
 
 ## Example
@@ -40,4 +40,4 @@ Made with ♥ and care by [Pierre-Henry Soria](http://ph7.me)
 
 ## License
 
-[MIT License](https://opensource.org/licenses/mit-license.php). Enjoy :smiley:
+[MIT License](https://opensource.org/licenses/mit-license.php). Enjoy! :smiley:
