@@ -7,7 +7,7 @@
 
 declare(strict_types = 1);
 
-namespace PH7\Test\Image\Unsplash;
+namespace PH7\Tests\Image\Unsplash;
 
 use PH7\Image\Unsplash;
 use PHPUnit\Framework\TestCase;
