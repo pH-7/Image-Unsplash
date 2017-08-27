@@ -19,7 +19,7 @@ It's a really lightweight and simple PHP class that helps you to get easily any 
     echo '<img src="' . $unsplash->getImage() . '">';
 
     $unsplash->setImageId('photo-1500045992661-f978470eaf7b');
-    $unsplash->fit(Unsplash::MAX_FIT);
+    $unsplash->setFit(Unsplash::MAX_FIT);
 
     echo '<img src="' . $unsplash->getImage() . '">';
 ```
