@@ -4,7 +4,7 @@
   "keywords": ["unsplash", "image", "api", "photo", "photos", "images"],
   "type": "library",
   "homepage": "http://ph7.me",
-  "license": "GPL-3.0+",
+  "license": "MIT",
   "authors": [
     {
       "name": "Pierre-Henry Soria",
