@@ -63,7 +63,7 @@ class Unsplash
     public function setFit(string $fit): Unsplash
     {
         if (!in_array($fit, self::FIT_FORMATS)) {
-            throw new InvalidFitException('Fit must be "crop" or "max".');
+            throw new InvalidFitException(sprintf('"%s" is an invalid fit. It must be either "crop" or "max".', $fit));
         }
 
         $this->fit = $fit;
