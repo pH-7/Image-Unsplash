@@ -19,6 +19,8 @@ class Unsplash
 
     protected const API_URL = 'https://images.unsplash.com/';
 
+    private const URL_PARAMS_SEPARATOR = '&amp;';
+
     private const FIT_FORMATS = [
         self::CROP_FIT,
         self::MAX_FIT
@@ -103,6 +105,6 @@ class Unsplash
 
     private function buildUrl(string $url, array $args): string
     {
-        return $url . '?' . http_build_query($args, '', '&amp;');
+        return $url . '?' . http_build_query($args, '', self::URL_PARAMS_SEPARATOR);
     }
 }
