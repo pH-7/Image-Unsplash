@@ -79,7 +79,7 @@ class Unsplash
     public function setFit(string $fit): Unsplash
     {
         if (!in_array($fit, self::FIT_FORMATS)) {
-            throw new InvalidFitException(sprintf('"%s" is an invalid fit. It must be either "crop" or "max".', $fit));
+            throw new InvalidFitException(sprintf('"%s" is an invalid fit. Must be either "crop" or "max".', $fit));
         }
 
         $this->fit = $fit;
@@ -104,7 +104,7 @@ class Unsplash
     public function setAuto(string $auto): Unsplash
     {
         if (!in_array($auto, self::AUTO_OPTIONS)) {
-            throw new InvalidAutoException(sprintf('"%s" is an invalid option. It must be auto.', $auto));
+            throw new InvalidAutoException(sprintf('"%s" is an invalid option. Must be either "auto" or "compress".', $auto));
         }
 
         $this->auto = $auto;
