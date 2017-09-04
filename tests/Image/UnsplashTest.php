@@ -25,7 +25,7 @@ class UnsplashTest extends TestCase
             ->setAuto('compress')
             ->setImageId('photo-1462045504115-6c1d931f07d1');
 
-        $expectedUrl = 'https://images.unsplash.com/photo-1462045504115-6c1d931f07d1?dpr=1&amp;auto=format&amp;fit=max&amp;w=750&amp;h=450&amp;q=90';
+        $expectedUrl = 'https://images.unsplash.com/photo-1462045504115-6c1d931f07d1?dpr=1&amp;auto=compress&amp;fit=max&amp;w=750&amp;h=450&amp;q=90';
         $this->assertSame($expectedUrl, $unsplash->getImage());
     }
 
@@ -53,6 +53,6 @@ class UnsplashTest extends TestCase
     public function testGetImageWithInvalidAuto(): void
     {
         $unsplash = new Unsplash();
-        $unsplash->setFit('formattt');
+        $unsplash->setAuto('formattt');
     }
 }
