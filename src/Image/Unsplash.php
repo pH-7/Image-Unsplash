@@ -75,6 +75,8 @@ class Unsplash
     }
 
     /**
+     * Controls how the output image is fit to its target dimensions after the resizing.
+     *
      * @param string $fit
      *
      * @return Unsplash
