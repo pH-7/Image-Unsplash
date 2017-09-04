@@ -19,6 +19,9 @@ class Unsplash
     public const MAX_FIT = 'max';
     public const FORMAT_AUTO_OPTION = 'format';
     public const COMPRESS_AUTO_OPTION = 'compress';
+    public const ENHANCE_AUTO_OPTION = 'enhance';
+    public const REDEYE_AUTO_OPTION = 'redeye';
+
 
     protected const API_URL = 'https://images.unsplash.com/';
 
@@ -31,7 +34,9 @@ class Unsplash
 
     private const AUTO_OPTIONS = [
         self::FORMAT_AUTO_OPTION,
-        self::COMPRESS_AUTO_OPTION
+        self::COMPRESS_AUTO_OPTION,
+        self::ENHANCE_AUTO_OPTION,
+        self::REDEYE_AUTO_OPTION
     ];
 
     /** @var string */
