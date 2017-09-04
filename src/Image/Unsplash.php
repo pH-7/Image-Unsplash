@@ -114,6 +114,8 @@ class Unsplash
 
     /**
      * The auto parameter helps to automate a baseline level of optimization across the entire image catalog.
+     *
+     * @throws InvalidAutoException
      */
     public function setAuto(string $auto): Unsplash
     {
