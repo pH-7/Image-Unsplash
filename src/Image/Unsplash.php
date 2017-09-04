@@ -99,6 +99,10 @@ class Unsplash
         return $this;
     }
 
+    /**
+     * Controls the output density of the image.
+     * It can serve images at the correct density for every user’s device/browser from a single master image.
+     */
     public function setDevicePixelRatio(int $devicePixelRatio): Unsplash
     {
         $this->devicePixelRatio = $devicePixelRatio;
@@ -106,6 +110,9 @@ class Unsplash
         return $this;
     }
 
+    /**
+     * The auto parameter helps to automate a baseline level of optimization across the entire image catalog.
+     */
     public function setAuto(string $auto): Unsplash
     {
         if (!in_array($auto, self::AUTO_OPTIONS)) {
