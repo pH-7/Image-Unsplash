@@ -17,7 +17,8 @@ class Unsplash
     public const DEFAULT_DPR = 2;
     public const CROP_FIT = 'crop';
     public const MAX_FIT = 'max';
-    public const AUTO_OPTION = 'format';
+    public const FORMAT_AUTO_OPTION = 'format';
+    public const COMPRESS_AUTO_OPTION = 'compress';
 
     protected const API_URL = 'https://images.unsplash.com/';
 
@@ -29,7 +30,8 @@ class Unsplash
     ];
 
     private const AUTO_OPTIONS = [
-        self::AUTO_OPTION
+        self::FORMAT_AUTO_OPTION,
+        self::COMPRESS_AUTO_OPTION
     ];
 
     /** @var string */
@@ -39,7 +41,7 @@ class Unsplash
     private $fit = self::CROP_FIT;
 
     /** @var string */
-    private $auto = self::AUTO_OPTION;
+    private $auto = self::FORMAT_AUTO_OPTION;
 
     /** @var int */
     private $width = self::DEFAULT_WIDTH;
