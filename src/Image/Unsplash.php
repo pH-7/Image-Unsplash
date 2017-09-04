@@ -14,8 +14,10 @@ class Unsplash
     public const DEFAULT_WIDTH = 600;
     public const DEFAULT_HEIGHT = 400;
     public const DEFAULT_QUALITY = 80;
+    public const DEFAULT_DPR = 2;
     public const CROP_FIT = 'crop';
     public const MAX_FIT = 'max';
+    public const AUTO_OPTION = 'format';
 
     protected const API_URL = 'https://images.unsplash.com/';
 
@@ -26,8 +28,18 @@ class Unsplash
         self::MAX_FIT
     ];
 
+    private const AUTO_OPTIONS = [
+        self::AUTO_OPTION
+    ];
+
     /** @var string */
     private $imageId;
+
+    /** @var string */
+    private $fit = self::CROP_FIT;
+
+    /** @var string */
+    private $auto = self::AUTO_OPTION;
 
     /** @var int */
     private $width = self::DEFAULT_WIDTH;
@@ -35,11 +47,11 @@ class Unsplash
     /** @var int */
     private $height = self::DEFAULT_HEIGHT;
 
-    /** @var string */
-    private $fit = self::CROP_FIT;
-
     /** @var int */
     private $quality = self::DEFAULT_QUALITY;
+
+    /** @var int */
+    private $devicePixelRatio = self::DEFAULT_DPR;
 
     public function setWidth(int $width): Unsplash
     {
@@ -80,6 +92,24 @@ class Unsplash
         return $this;
     }
 
+    public function setDevicePixelRatio(int $devicePixelRatio): Unsplash
+    {
+        $this->devicePixelRatio = $devicePixelRatio;
+
+        return $this;
+    }
+
+    public function setAuto(string $auto): Unsplash
+    {
+        if (!in_array($auto, self::AUTO_OPTIONS)) {
+            throw new InvalidAutoException(sprintf('"%s" is an invalid option. It must be auto.', $auto));
+        }
+
+        $this->auto = $auto;
+
+        return $this;
+    }
+
     public function setImageId(string $imageId): Unsplash
     {
         $this->imageId = $imageId;
@@ -92,8 +122,8 @@ class Unsplash
         $imageUrl = self::API_URL . $this->imageId;
 
         $options = [
-            'dpr' => 2,
-            'auto' => 'format',
+            'dpr' => $this->devicePixelRatio,
+            'auto' => $this->auto,
             'fit' => $this->fit,
             'w' => $this->width,
             'h' => $this->height,

@@ -21,9 +21,11 @@ class UnsplashTest extends TestCase
             ->setHeight(450)
             ->setQuality(90)
             ->setFit('max')
+            ->setDevicePixelRatio(3)
+            ->setAuto('format')
             ->setImageId('photo-1462045504115-6c1d931f07d1');
 
-        $expectedUrl = 'https://images.unsplash.com/photo-1462045504115-6c1d931f07d1?dpr=2&amp;auto=format&amp;fit=max&amp;w=750&amp;h=450&amp;q=90';
+        $expectedUrl = 'https://images.unsplash.com/photo-1462045504115-6c1d931f07d1?dpr=3&amp;auto=format&amp;fit=max&amp;w=750&amp;h=450&amp;q=90';
         $this->assertSame($expectedUrl, $unsplash->getImage());
     }
 
@@ -43,5 +45,14 @@ class UnsplashTest extends TestCase
     {
         $unsplash = new Unsplash();
         $unsplash->setFit('I am invalid arg');
+    }
+
+    /**
+     * @expectedException \PH7\Image\InvalidAutoException
+     */
+    public function testGetImageWithInvalidAuto(): void
+    {
+        $unsplash = new Unsplash();
+        $unsplash->setFit('formattt');
     }
 }
