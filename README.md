@@ -1,4 +1,6 @@
-# Get Unsplash Images Easily
+# Unsplash Helper
+
+## Get Unsplash Images Easily
 
 Get easily any Unsplash images with a clean PHP class.
 
@@ -8,31 +10,31 @@ It's a really lightweight and simple PHP class that helps you to get easily any 
 ## Example
 
 ```php
-    use PH7\Image\Unsplash;
+use PH7\Image\Unsplash;
 
-    $unsplash = new Unsplash();
-    $unsplash->setWidth(600)
-        ->setHeight(400)
-        ->setQuality(80)
-        ->setImageId('photo-1462045504115-6c1d931f07d1');
+$unsplash = new Unsplash();
+$unsplash->setWidth(600)
+    ->setHeight(400)
+    ->setQuality(80)
+    ->setImageId('photo-1462045504115-6c1d931f07d1');
 
-    echo '<img src="' . $unsplash->getImage() . '">';
+echo '<img src="' . $unsplash->getImage() . '">';
 
-    $unsplash->setImageId('photo-1500045992661-f978470eaf7b');
-    $unsplash->setFit(Unsplash::MAX_FIT);
+$unsplash->setImageId('photo-1500045992661-f978470eaf7b');
+$unsplash->setFit(Unsplash::MAX_FIT);
 
-    echo '<img src="' . $unsplash->getImage() . '">';
+echo '<img src="' . $unsplash->getImage() . '">';
 ```
 
 
 ##  Installation
 
-* Install Composer (https://getcomposer.org)
-* Then, include it in your project:
+1. Install Composer (https://getcomposer.org)
+2. Include it in your project:
 ```bash
 composer require ph-7/image-unsplash
  ```
- 
+
 
 ## Requirements
 
